@@ -17,14 +17,14 @@ Built scalar functions to check:
 - Created a summary report with total valid/invalid/missing PANs.
 
 #### b. Custom Utility Functions
-fn_check_adjacent_repetition → detects repeated side-by-side characters.
-fn_check_sequence → detects strictly sequential characters.
-fn_check_sequence_5 → enhanced function to detect 5+ consecutive characters.
+- fn_check_adjacent_repetition → detects repeated side-by-side characters.
+- fn_check_sequence → detects strictly sequential characters.
+- fn_check_sequence_5 → enhanced function to detect 5+ consecutive characters.
 
 #### c. Data Cleaning & Transformation
-Used LTRIM(), RTRIM(), UPPER() for standardization.
-Applied CTEs to modularize cleaning and validation logic.
-Ensured handling of NULLs and empty strings.
+- Used LTRIM(), RTRIM(), UPPER() for standardization.
+- Applied CTEs to modularize cleaning and validation logic.
+- Ensured handling of NULLs and empty strings.
 
 #### Key SQL Skills Demonstrated
 - Writing scalar functions for validation
