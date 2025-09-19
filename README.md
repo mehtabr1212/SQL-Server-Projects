@@ -9,12 +9,12 @@ Objective: Clean, validate, and categorize PAN numbers into Valid and Invalid.
 
 #### a. Highlights:
 Built scalar functions to check:
-Adjacent character repetition
-Sequential characters
-Designed a view (vw_valid_invalid_pans) to classify PAN numbers using rules:
-Format check ([A-Z]{5}[0-9]{4}[A-Z])
-No repeated or sequential characters
-Created a summary report with total valid/invalid/missing PANs.
+- Adjacent character repetition
+- Sequential characters
+- Designed a view (vw_valid_invalid_pans) to classify PAN numbers using rules:
+- Format check ([A-Z]{5}[0-9]{4}[A-Z])
+- No repeated or sequential characters
+- Created a summary report with total valid/invalid/missing PANs.
 
 #### b. Custom Utility Functions
 fn_check_adjacent_repetition → detects repeated side-by-side characters.
