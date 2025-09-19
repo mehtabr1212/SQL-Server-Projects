@@ -27,15 +27,15 @@ Applied CTEs to modularize cleaning and validation logic.
 Ensured handling of NULLs and empty strings.
 
 #### Key SQL Skills Demonstrated
-✅ Writing scalar functions for validation
-✅ Designing views for business logic encapsulation
-✅ Using CTEs for stepwise data processing
-✅ Applying CASE expressions for conditional outputs
-✅ Mastering JOINs
-✅ Creating summary reports with aggregations
-✅ Applying regular expressions with LIKE patterns for format validation
+- Writing scalar functions for validation
+- Designing views for business logic encapsulation
+- Using CTEs for stepwise data processing
+- Applying CASE expressions for conditional outputs
+- Mastering JOINs
+- Creating summary reports with aggregations
+- Applying regular expressions with LIKE patterns for format validation
 
 #### Tech Stack
-SQL Server (T-SQL)
-Database: pan_numbers_dataset_cleaned, stg_pan_numbers_dataset
-Tools: SQL Server Management Studio (SSMS)
+- SQL Server (T-SQL)
+- Database: pan_numbers_dataset_cleaned, pan_numbers_dataset
+- Tools: SQL Server Management Studio (SSMS)
