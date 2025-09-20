@@ -48,13 +48,13 @@ This project demonstrates how to clean, validate, and categorize Indian PAN (Per
 ## Example Output
 **Categorized PANs (vw_valid_invalid_pans)**
 
-| **PAN Number**	|    **Status** |
+| PAN Number	    |    Status     |
 |-----------------|---------------|
 | ABRHX1259F	    |    Valid PAN  |
 | AADA18129X	    |   Invalid PAN |
 | ADH5159	        |   Invalid PAN |
 
-### Summary Report
+**Summary Report**
 
 | Total Records | Valid PANs  | Invalid PANs | Missing/Incomplete |
 |---------------|------------ |--------------|--------------------|
