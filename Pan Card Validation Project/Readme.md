@@ -52,9 +52,11 @@ ABRHX1259F	        Valid PAN
 AADA18129X	       Invalid PAN
 ADH5159	           Invalid PAN
 
-**Summary Report**
-Total Records	  Valid PANs	  Invalid PANs	 Missing/Incomplete
-9033	             3186	         5839	              8
+### Summary Report
+
+| Total Records | Valid PANs  | Invalid PANs | Missing/Incomplete |
+|---------------|------------ |--------------|--------------------|
+|     9033      |    3186     |     5839     |        8           |
 
 ## Note
 - This implementation assumes Indian PAN structure (10 characters: 5 letters + 4 digits + 1 letter).
