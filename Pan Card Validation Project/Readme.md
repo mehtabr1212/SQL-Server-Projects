@@ -60,5 +60,3 @@ This project demonstrates how to clean, validate, and categorize Indian PAN (Per
 |---------------|------------ |--------------|--------------------|
 |     9033      |    3186     |     5839     |        8           |
 
-## Note
-- This implementation assumes Indian PAN structure (10 characters: 5 letters + 4 digits + 1 letter).
