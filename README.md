@@ -4,8 +4,8 @@ Welcome to my SQL Server Projects repository!
 This repo contains SQL scripts, stored procedures, functions, views, and reporting queries that I’ve built to showcase my database design, optimization, and data analysis skills.
 
 ## Projects Included
-### 1. PAN Validation & Categorization
-Objective: Clean, validate, and categorize PAN numbers into Valid and Invalid.
+### 1. PAN Number Validation Project
+**Objective:** Clean, validate, and categorize PAN numbers into Valid and Invalid.
 
 #### a. Highlights:
 Built scalar functions to check:
