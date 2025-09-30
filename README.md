@@ -17,14 +17,15 @@ Built scalar functions to check:
 - Created a summary report with total valid/invalid/missing PANs.
 
 #### Key SQL Skills Demonstrated
-- Writing scalar functions for validation
-- Designing views for business logic encapsulation
-- Using CTEs for stepwise data processing
-- Applying CASE expressions for conditional outputs
-- Mastering JOINs
-- Creating summary reports with aggregations
-- Applying regular expressions with LIKE patterns for format validation
+- Writing scalar functions for validation.
+- Designing views for business logic encapsulation.
+- Using CTEs for stepwise data processing.
+- Applying CASE expressions for conditional outputs.
+- JOINs.
+- Creating summary reports with aggregations.
+- Applying regular expressions with LIKE patterns for format validation.
 
 #### Tech Stack
 - SQL Server (T-SQL)
-- Tools: SQL Server Management Studio (SSMS 21), SQL Server 16
+- Tools: SQL Server Management Studio (SSMS 21)
+- SQL Server 16
