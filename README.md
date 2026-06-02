@@ -1,7 +1,7 @@
 # SQL Server Projects
 
 Welcome to my SQL Server Projects repository!
-This repo contains SQL scripts, stored procedures, functions, views, and reporting queries that I’ve built to showcase my T-SQL, database design and data analysis skills.
+This repo contains SQL scripts, stored procedures, functions, views, and reporting queries that I’ve built to showcase my SQL Server, T-SQL, Database Design and Data Analysis Skills.
 
 ## Projects Included
 ### 1. PAN Number Validation Project
