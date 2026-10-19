@@ -24,7 +24,7 @@ A hands-on SQL Server learning project demonstrating backup automation, backup-h
 -   SQL Server Management Studio (SSMS)
 -   SQL Server Agent
 -   Full, differential, and transaction log backups
--   `FULL` recovery model
+-   'FULL' recovery model
 -   Backup compression and checksums
 -   'msdb.dbo.backupset' and 'msdb.dbo.backupmediafamily'
 -   'RESTORE FILELISTONLY', 'NORECOVERY', 'RECOVERY', 'STOPAT', and 'MOVE'
