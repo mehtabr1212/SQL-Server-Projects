@@ -35,19 +35,6 @@ recovery after accidental table or database deletion.
     `MOVE`
 -   Point-in-time recovery (PITR) and disaster recovery (DR)
 
-## Repository contents
-
-Suggested repository layout:
-
-``` text
-sql-server-backup-pitr/
-├── README.md
-└── CompanyDB_Backup_PITR.sql
-```
-
-Upload your SQL script with a descriptive filename such as
-`CompanyDB_Backup_PITR.sql`.
-
 ## Prerequisites
 
 -   A SQL Server instance with permission to create databases and
