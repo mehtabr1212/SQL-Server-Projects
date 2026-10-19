@@ -1,8 +1,6 @@
 # SQL Server Automated Backup and Point-in-Time Recovery (PITR)
 
-A hands-on SQL Server learning project demonstrating backup automation,
-backup-history monitoring, point-in-time recovery (PITR), and disaster
-recovery after accidental table or database deletion.
+A hands-on SQL Server learning project demonstrating backup automation, backup-history monitoring, point-in-time recovery (PITR), and disaster recovery after accidental table or database deletion.
 
 > **Important:** This is a learning project. Run destructive operations
 > only on a dedicated test SQL Server instance. Do not run the script
@@ -11,15 +9,13 @@ recovery after accidental table or database deletion.
 
 ## Project objectives
 
--   Create a sample `CompanyDB` database and an `Employees` table.
+-   Create a sample 'CompanyDB' database and an 'Employees' table.
 -   Insert sample records for testing.
 -   Perform a full database backup.
--   Configure SQL Server Agent job steps for full, differential, and
-    transaction log backups.
+-   Configure SQL Server Agent job steps for full, differential, and transaction log backups.
 -   Review backup history using SQL Server metadata in `msdb`.
--   Practice restoring a database to a point before an accidental
-    `DROP TABLE`.
--   Practice restoring a database after an accidental `DROP DATABASE`.
+-   Practice restoring a database to a point before an accidental 'DROP TABLE'.
+-   Practice restoring a database after an accidental 'DROP DATABASE'.
 -   Verify the database and sample data after recovery.
 
 ## Technologies and concepts
@@ -30,22 +26,17 @@ recovery after accidental table or database deletion.
 -   Full, differential, and transaction log backups
 -   `FULL` recovery model
 -   Backup compression and checksums
--   `msdb.dbo.backupset` and `msdb.dbo.backupmediafamily`
--   `RESTORE FILELISTONLY`, `NORECOVERY`, `RECOVERY`, `STOPAT`, and
-    `MOVE`
+-   'msdb.dbo.backupset' and 'msdb.dbo.backupmediafamily'
+-   'RESTORE FILELISTONLY', 'NORECOVERY', 'RECOVERY', 'STOPAT', and 'MOVE'
 -   Point-in-time recovery (PITR) and disaster recovery (DR)
 
 ## Prerequisites
 
--   A SQL Server instance with permission to create databases and
-    perform backup/restore operations.
+-   A SQL Server instance with permission to create databases and perform backup/restore operations.
 -   SQL Server Management Studio (SSMS).
--   SQL Server Agent available and running if you want to schedule jobs;
-    it is not available in every SQL Server edition.
--   A dedicated test environment: this project deliberately drops a
-    table and a database.
--   Backup folders created on the SQL Server host, with write access
-    granted to the SQL Server Database Engine service account.
+-   SQL Server Agent available and running if you want to schedule jobs; it is not available in every SQL Server edition.
+-   A dedicated test environment: this project deliberately drops a table and a database.
+-   Backup folders created on the SQL Server host, with write access granted to the SQL Server Database Engine service account.
 
 The sample script uses this Windows path:
 
@@ -62,19 +53,15 @@ D:\DBA Projects\Backups\Trans\
 D:\DBA Projects\Backups\Tail\
 ```
 
-Change these paths if needed. SQL Server interprets these paths on the
-database server, which may be different from the computer running SSMS.
+Change these paths if needed. SQL Server interprets these paths on the database server, which may be different from the computer running SSMS.
 
 ## How to use the project
 
 ### 1. Create the sample database
 
-Run **Section 1: Database Setup** only if `CompanyDB` does not already
-exist. It creates the database, switches it to the `FULL` recovery
-model, and creates the `Employees` table.
+Run **Section 1: Database Setup** only if `CompanyDB` does not already exist. It creates the database, switches it to the `FULL` recovery model, and creates the `Employees` table.
 
-Run **Section 2: Insert Sample Data** to add sample employee records and
-verify them with a `SELECT` query.
+Run **Section 2: Insert Sample Data** to add sample employee records and verify them with a `SELECT` query.
 
 > The setup statements are not designed to be re-run blindly. If the
 > database or table already exists, adjust the setup steps to avoid
@@ -87,8 +74,7 @@ This creates a baseline backup for the restore chain.
 
 ### 3. Configure automated backup jobs
 
-In SSMS, create separate SQL Server Agent jobs and place the
-corresponding T-SQL from Section 4 into a T-SQL job step for each job:
+In SSMS, create separate SQL Server Agent jobs and place the corresponding T-SQL from Section 4 into a T-SQL job step for each job:
 
 |  Job                     | Example schedule  | Backup type      |
 |  ------------------------| ------------------| ---------------- |
@@ -96,28 +82,19 @@ corresponding T-SQL from Section 4 into a T-SQL job step for each job:
 |  Differential backup     | Every 6 hours     | Differential     |
 |  Transaction log backup  | Every 15 minutes  | Transaction log  |
 
-These are example schedules, not a universal backup policy. Choose
-schedules and retention rules based on recovery point objectives (RPO),
-recovery time objectives (RTO), workload, and available storage.
+These are example schedules, not a universal backup policy. Choose schedules and retention rules based on recovery point objectives (RPO), recovery time objectives (RTO), workload, and available storage.
 
-Configure job ownership, permissions, failure notifications, and
-retention/cleanup separately. Email notifications require Database Mail
-and an appropriately configured SQL Server Agent operator.
+Configure job ownership, permissions, failure notifications, and retention/cleanup separately. Email notifications require Database Mail and an appropriately configured SQL Server Agent operator.
 
 ### 4. Monitor backup history
 
-Run **Section 5: Backup History and Monitoring** to query backup
-metadata in `msdb`. The query reports backup type, start and finish
-time, backup size, compressed size, and backup file path.
+Run **Section 5: Backup History and Monitoring** to query backup metadata in `msdb`. The query reports backup type, start and finish time, backup size, compressed size, and backup file path.
 
-You can also review job status in SQL Server Agent's Job Activity
-Monitor. A successful job is useful evidence, but it does not replace
-periodic restore testing.
+You can also review job status in SQL Server Agent's Job Activity Monitor. A successful job is useful evidence, but it does not replace periodic restore testing.
 
 ### 5. Test recovery after accidental table deletion
 
-**Section 6** simulates a dropped `Employees` table and demonstrates a
-restore to a point before the deletion.
+**Section 6** simulates a dropped `Employees` table and demonstrates a restore to a point before the deletion.
 
 Before recovery:
 
@@ -129,30 +106,17 @@ Before recovery:
 4.  Confirm the actual backup filenames and destination paths.
 5.  Take a tail-log backup only when appropriate and possible.
 
-The script contains example filenames and a timestamp from an earlier
-test. Replace them with the files and times from your own run. Restore
-the full backup with `NORECOVERY`, then the compatible differential
-backup if used, followed by every required transaction log backup in the
-correct sequence. Apply `STOPAT` on the appropriate final log restore
-and use `RECOVERY` to bring the database online.
+The script contains example filenames and a timestamp from an earlier test. Replace them with the files and times from your own run. Restore the full backup with `NORECOVERY`, then the compatible differential backup if used, followed by every required transaction log backup in the correct sequence. Apply `STOPAT` on the appropriate final log restore and use `RECOVERY` to bring the database online.
 
 ### 6. Test disaster recovery after database deletion
 
-**Section 7** simulates dropping `CompanyDB` and restoring it from
-backups.
+**Section 7** simulates dropping `CompanyDB` and restoring it from backups.
 
-Before running the destructive statement, verify that you are connected
-to a dedicated test instance and have confirmed the backups you intend
-to use. Use `RESTORE FILELISTONLY` to inspect logical file names, then
-adjust `MOVE` destinations to valid paths on the SQL Server host.
+Before running the destructive statement, verify that you are connected to a dedicated test instance and have confirmed the backups you intend to use. Use `RESTORE FILELISTONLY` to inspect logical file names, then adjust `MOVE` destinations to valid paths on the SQL Server host.
 
-Restore the full backup, the compatible differential backup if
-available, and all required transaction log backups in the correct LSN
-sequence. Complete the sequence with `RECOVERY` only after applying the
-intended restore chain.
+Restore the full backup, the compatible differential backup if available, and all required transaction log backups in the correct LSN sequence. Complete the sequence with `RECOVERY` only after applying the intended restore chain.
 
-After recovery, verify database status and data using the queries in the
-script.
+After recovery, verify database status and data using the queries in the script.
 
 ## Important recovery notes
 
@@ -189,8 +153,7 @@ script.
 By completing this project in a test environment, you can practice:
 
 -   Creating and validating a SQL Server backup plan.
--   Understanding full, differential, and transaction log backup
-    relationships.
+-   Understanding full, differential, and transaction log backup relationships.
 -   Automating backup commands through SQL Server Agent.
 -   Monitoring backup metadata and job status.
 -   Planning and executing point-in-time recovery.
@@ -198,16 +161,10 @@ By completing this project in a test environment, you can practice:
 
 ## Safety disclaimer
 
-This repository is for educational and portfolio demonstration purposes
-only. It is not a production-ready backup policy. Review every command,
-confirm the target SQL Server instance and file paths, and maintain
-independent backups before destructive operations. Never test
-`DROP TABLE`, `DROP DATABASE`, or restore commands against a production
-database.
+This repository is for educational and portfolio demonstration purposes only. It is not a production-ready backup policy. Review every command, confirm the target SQL Server instance and file paths, and maintain independent backups before destructive operations. Never test `DROP TABLE`, `DROP DATABASE`, or restore commands against a production database.
 
 ## Author
 
-**Mehtab Singh Randhaw**
+**Mehtab Singh Randhawa**
 
-Project focus: SQL Server database backup, monitoring, point-in-time
-recovery, and disaster recovery.
+Project focus: SQL Server database backup, monitoring, point-in-time recovery, and disaster recovery.
