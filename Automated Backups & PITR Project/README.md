@@ -90,11 +90,11 @@ This creates a baseline backup for the restore chain.
 In SSMS, create separate SQL Server Agent jobs and place the
 corresponding T-SQL from Section 4 into a T-SQL job step for each job:
 
-  Job                      Example schedule   Backup type
-  ------------------------ ------------------ -----------------
-  Full backup              Daily at 00:00     Full database
-  Differential backup      Every 6 hours      Differential
-  Transaction log backup   Every 15 minutes   Transaction log
+|  Job                     | Example schedule  | Backup type      |
+|  ------------------------| ------------------| ---------------- |
+|  Full backup             | Daily at 00:00    | Full database    |
+|  Differential backup     | Every 6 hours     | Differential     |
+|  Transaction log backup  | Every 15 minutes  | Transaction log  |
 
 These are example schedules, not a universal backup policy. Choose
 schedules and retention rules based on recovery point objectives (RPO),
